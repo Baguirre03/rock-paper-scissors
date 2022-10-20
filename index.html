@@ -10,8 +10,30 @@
     <script>
         const myArray = ["Rock", "Paper", "Scissors"]
         let getComputerChoice = myArray[Math.floor(Math.random() * myArray.length)];
+        
 
-        console.log(getComputerChoice);
+        const playerSelection = "rock"
+        const computerSelection = getComputerChoice
+
+        console.log(computerSelection)
+        console.log(playerSelection)
+        console.log(playRound(playerSelection, computerSelection))
+        
+
+        function playRound(playerSelection, computerSelection) {
+            if (computerSelection == "Scissors") {
+                return "Congrats you win! Rock beat scissors."
+            }
+            else if (computerSelection == "Rock") {
+                return "You Tie, both chose rock."
+            }
+            else {
+                return "You loose, rock looses to paper."
+            }
+            }
+        
+
+
     </script>
 </body>
 </html>
