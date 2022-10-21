@@ -16,48 +16,23 @@
         let computerScore = 0
 
 
-        function playRound(playerSelection, computerSelection) { //ROCK SELECTIONS
-            if (playerSelection == "rock" && computerSelection == "scissors") { // rock(user), scissor (computer)
-                return youWin
-                return ++playerScore
-            }
-            else if (playerSelection == "rock" && computerSelection == "rock") { // rock(user), rock (computer)
-                return tie
-            }
-            else if (playerSelection == "rock" && computerSelection == "paper") { // rock(user), paper(computer)
-                return youLose
-                return ++computerScore
-            } //PAPER SELECTIONS
-            else if (playerSelection == "paper" && computerSelection == "scissors") { //paper(user), scissors(computer)
-                return youLose
-                return ++computerScore
-            }
-            else if (playerSelection == "paper" && computerSelection == "rock") { //paper(user), rock(computer)
-                return youWin
-                return ++playerScore
-            }
-            else if (playerSelection == "paper" && computerSelection == "paper") { //paper(user), scissors(paper)
-                return tie
-            } //SCISSOR SELECTIONS
-            else if (playerSelection == "scissors" && computerSelection == "scissors") { //paper(user), scissors(computer)
-                return tie
-            }
-            else if (playerSelection == "scissors" && computerSelection == "rock") { //paper(user), rock(computer)
-                return youLose
-                return ++computerScore
-            }
-            else if (playerSelection == "scissors" && computerSelection == "paper") { //paper(user), paper(computer)
-                return youWin
-                return ++playerScore
-            }
-            else {
-                return "Invalid answer"
-            }
-        }
-
         let playerSelectionPrompt = prompt("Rock, Paper, or Scissors?") // prompt for user
         let playerSelection = playerSelectionPrompt.toLowerCase() // turning prompt answer into lowercase
         const computerSelection = getComputerChoice.toLowerCase() // turning computer choice into comp selection
+
+        function playRound(playerSelection, computerSelection) { //Simplified Selections
+            if (playerSelection == computerSelection) {
+                return tie
+            } else if (playerSelection == "rock" && computerSelection == "scissors" ||
+                        playerSelection == "paper" && computerSelection == "rock" ||
+                        playerSelection == "scissors" && computerScore == "paper") {
+                            playerScore++
+                            return youWin
+            } else {
+                computerScore++
+                return youLose
+            }
+        }
 
         const tie = "You tie!" // Tie return
         const youWin = (`You Win! ${playerSelection.toUpperCase().charAt(0) + playerSelection.slice(1)} beats ${computerSelection}!`); //win return (capitalizes response again)
@@ -66,10 +41,8 @@
         console.log(playRound(playerSelection, computerSelection)) // shows outcome of playround
         console.log(playerScore)
         console.log(computerScore)
-
-      
-        
-
+        console.log(playerSelection)
+        console.log(computerSelection)
 
     </script>
 </body>
