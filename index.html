@@ -41,9 +41,16 @@
         console.log(playRound(playerSelection, computerSelection)) // shows outcome of playround
         console.log(playerScore)
         console.log(computerScore)
-        console.log(playerSelection)
-        console.log(computerSelection)
 
+        function playGame(playRound) {
+            if (playerScore == computerScore) {
+                return "Tie game!"
+            } else if (playerScore > computerScore) {
+                return "You are in the lead!"
+            } else if (computerScore > playerScore) {
+                return "You are losing!"
+            }
+        }
     </script>
 </body>
 </html>
