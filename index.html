@@ -13,45 +13,48 @@
 
         function playRound(playerSelection, computerSelection) { //ROCK SELECTIONS
             if (playerSelection == "rock" && computerSelection == "scissors") { // rock(user), scissor (computer)
-                return "Congrats you win! Rock beat scissors."
+                return youWin
             }
             else if (playerSelection == "rock" && computerSelection == "rock") { // rock(user), rock (computer)
-                return "You tie, both chose rock."
+                return tie
             }
             else if (playerSelection == "rock" && computerSelection == "paper") { // rock(user), paper(computer)
-                return "You loose, rock looses to paper."
+                return youLose
             } //PAPER SELECTIONS
             else if (playerSelection == "paper" && computerSelection == "scissors") { //paper(user), scissors(computer)
-                return "You loose, paper looses to scissors."
+                return youLose
             }
             else if (playerSelection == "paper" && computerSelection == "rock") { //paper(user), rock(computer)
-                return "Congrats you win! Paper beats rock."
+                return youWin
             }
             else if (playerSelection == "paper" && computerSelection == "paper") { //paper(user), scissors(paper)
-                return "You tie, both chose paper."
+                return tie
             } //SCISSOR SELECTIONS
             else if (playerSelection == "scissors" && computerSelection == "scissors") { //paper(user), scissors(computer)
                 return tie
             }
             else if (playerSelection == "scissors" && computerSelection == "rock") { //paper(user), rock(computer)
-                return "You loose, scissors looses to rock."
+                return youLose
             }
             else if (playerSelection == "scissors" && computerSelection == "paper") { //paper(user), paper(computer)
-                return "Congrats you win! Scissors beats paper."
+                return youWin
             }
             else {
                 return "Invalid answer"
             }
         }
-
-        const tie = "You tie!"
+    
         let playerSelectionPrompt = prompt("Rock, Paper, or Scissors?") // prompt for user
         let playerSelection = playerSelectionPrompt.toLowerCase() // turning prompt answer into lowercase
         const computerSelection = getComputerChoice.toLowerCase() // turning computer choice into comp selection
 
+        const tie = "You tie!" // Tie return
+        const youWin = (`You Win! ${playerSelection.toUpperCase().charAt(0) + playerSelection.slice(1)} beats ${computerSelection}!`); //win return (capitalizes response again)
+        const youLose = (`You Lose! ${playerSelection.toUpperCase().charAt(0) + playerSelection.slice(1)} loses to ${computerSelection}!`) // loose return (capitalizes response again)
+
         for (let i = 0; i < 5; i++) {
             function game(){
-                playRound()
+                playRound(playerSelection, computerSelection)
             }
         }
 
