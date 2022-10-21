@@ -20,6 +20,17 @@
         let playerSelection = playerSelectionPrompt.toLowerCase() // turning prompt answer into lowercase
         const computerSelection = getComputerChoice.toLowerCase() // turning computer choice into comp selection
 
+
+        function playGame(playRound) {
+            if (playerScore == computerScore) {
+                return "Tie game!"
+            } else if (playerScore > computerScore) {
+                return "You are in the lead!"
+            } else if (computerScore > playerScore) {
+                return "You are losing!"
+            }
+        }
+
         function playRound(playerSelection, computerSelection) { //Simplified Selections
             if (playerSelection == computerSelection) {
                 return tie
@@ -42,15 +53,7 @@
         console.log(playerScore)
         console.log(computerScore)
 
-        function playGame(playRound) {
-            if (playerScore == computerScore) {
-                return "Tie game!"
-            } else if (playerScore > computerScore) {
-                return "You are in the lead!"
-            } else if (computerScore > playerScore) {
-                return "You are losing!"
-            }
-        }
+        console.log(playGame())
     </script>
 </body>
 </html>
