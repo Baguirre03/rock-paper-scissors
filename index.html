@@ -21,7 +21,7 @@
         const computerSelection = getComputerChoice.toLowerCase() // turning computer choice into comp selection
 
 
-        function playGame(playRound) {
+        function playGame() {
             if (playerScore == computerScore) {
                 return "Tie game!"
             } else if (playerScore > computerScore) {
@@ -38,16 +38,15 @@
                         playerSelection == "paper" && computerSelection == "rock" ||
                         playerSelection == "scissors" && computerScore == "paper") {
                             playerScore++
-                            return youWin
+                            return youWinRound
             } else {
                 computerScore++
-                return youLose
-            }
+                return youLoseRound
+            } 
         }
-
         const tie = "You tie!" // Tie return
-        const youWin = (`You Win! ${playerSelection.toUpperCase().charAt(0) + playerSelection.slice(1)} beats ${computerSelection}!`); //win return (capitalizes response again)
-        const youLose = (`You Lose! ${playerSelection.toUpperCase().charAt(0) + playerSelection.slice(1)} loses to ${computerSelection}!`) // loose return (capitalizes response again)
+        const youWinRound = (`You Win! ${playerSelection.toUpperCase().charAt(0) + playerSelection.slice(1)} beats ${computerSelection}!`); //win return (capitalizes response again)
+        const youLoseRound = (`You Lose! ${playerSelection.toUpperCase().charAt(0) + playerSelection.slice(1)} loses to ${computerSelection}!`) // loose return (capitalizes response again)
 
         console.log(playRound(playerSelection, computerSelection)) // shows outcome of playround
         console.log(playerScore)
