@@ -1,7 +1,14 @@
 const selections = document.querySelectorAll('button')
 let result = document.querySelector('#result')
-let resultScoreUser = document.querySelector('#result-score-user')
-let resultScoreComputer = document.querySelector('#result-score-computer')
+let uScore = 0
+let cScore = 0
+
+const updateScore = () => {
+    const computerScore = document.querySelector('.computerScore')
+    const userScore = document.querySelector('.userScore')
+    computerScore.textContent = cScore
+    userScore.textContent = uScore
+}
 
 
 const myArray = ["Rock", "Paper", "Scissors"]
@@ -24,13 +31,22 @@ function playRound(playerSelection){
                  playerSelection == "Paper" && computerSelection == "Rock" ||
                  playerSelection == "Scissors" && computerSelection == "Paper") {
                     result.textContent = `You Win! ${playerSelection} beats ${computerSelection}`
-                    resultScoreUser++
+                    uScore++
+                    updateScore();
+                    return;
     } else {   
         result.textContent = `You lose! ${playerSelection} loses to ${computerSelection}`
-        resultScoreComputer++
+        cScore++
+        updateScore();
+        return;
     }
     console.log(computerSelection)
     console.log(playerSelection);
-    console.log(resultScoreUser)
+}
+
+function checkGameScore() {
+    if (uScore === 5 || cScore === 5) {
+        
+    }
 }
 
