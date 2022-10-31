@@ -5,56 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script>
-        const myArray = ["Rock", "Paper", "Scissors"]
-        let getComputerChoice = myArray[Math.floor(Math.random() * myArray.length)]; // computer chooses random from array
+    <div class="selections">
+        <button class="selection" id="Rock">Rock</button>
+        <button class="selection" id="Paper">Paper</button>
+        <button class="selection" id="Scissors">Scissors</button>
+    </div>
+    <div class="results">
+        <div>You
+            <span class="result-score-user">0</span>
+        </div>
+        <div>Computer
+            <span class="result-score-computer">0</span>
+        </div>
+    </div>
+    <div id="result">Results: </div>
 
-
-        let playerScore = 0
-        let computerScore = 0
-
-
-        let playerSelectionPrompt = prompt("Rock, Paper, or Scissors?") // prompt for user
-        let playerSelection = playerSelectionPrompt.toLowerCase() // turning prompt answer into lowercase
-        const computerSelection = getComputerChoice.toLowerCase() // turning computer choice into comp selection
-
-        function playRound(playerSelection, computerSelection) { //Simplified Selections
-            if (playerSelection == computerSelection) {
-                return tie
-            } else if (playerSelection == "rock" && computerSelection == "scissors" ||
-                        playerSelection == "paper" && computerSelection == "rock" ||
-                        playerSelection == "scissors" && computerScore == "paper") {
-                            playerScore++
-                            return youWinRound
-            } else {
-                computerScore++
-                return youLoseRound
-            } 
-        }
-
-        function gameScore() {
-            if (playerScore == computerScore) {
-                return "Tie game!"
-            } else if (playerScore > computerScore) {
-                return "You are in the lead!"
-            } else if (computerScore > playerScore) {
-                return "You are losing!"
-            }
-        }
-
-        
-
-        const tie = "You tie!" // Tie return
-        const youWinRound = (`You Win! ${playerSelection.toUpperCase().charAt(0) + playerSelection.slice(1)} beats ${computerSelection}!`); //win return (capitalizes response again)
-        const youLoseRound = (`You Lose! ${playerSelection.toUpperCase().charAt(0) + playerSelection.slice(1)} loses to ${computerSelection}!`) // loose return (capitalizes response again)
-
-        console.log(playRound(playerSelection, computerSelection)) // shows outcome of playround
-        console.log(playerScore)
-        console.log(computerScore)
-        console.log(gameScore())
-
-    </script>
+<script src="main.js"></script>
 </body>
 </html>
