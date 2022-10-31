@@ -19,7 +19,7 @@ selections.forEach((button) => {
 function playRound(playerSelection){
     const computerSelection = getComputerChoice();
     if (playerSelection === computerSelection) {
-        result.textContent = `You both chose ${computerSelection}, Round tied!`
+        result.textContent = `You both chose ${computerSelection}, round tied!`
     } else if (playerSelection == "Rock" && computerSelection == "Scissors" ||
                  playerSelection == "Paper" && computerSelection == "Rock" ||
                  playerSelection == "Scissors" && computerSelection == "Paper") {
