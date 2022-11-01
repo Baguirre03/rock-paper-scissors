@@ -1,8 +1,8 @@
-const selections = document.querySelectorAll('.selections')
+const selections = document.querySelectorAll('button')
 let result = document.querySelector('#result')
 const gameOverAppear = document.querySelector('.gameOverAppear')
 const restartGameButton = document.querySelector('#restart')
-
+const gameOver = document.querySelector('#gameOver')
 
 let uScore = 0
 let cScore = 0
@@ -49,8 +49,13 @@ function playRound(playerSelection){
 }
 
 function checkGameScore(){ 
-    if (uScore === 5 || cScore === 5) {
+    if (uScore === 5) {
         document.getElementById('reveal').style.display='flex';
+        gameOver.textContent = "Game over, you won!!! "
+        restartGameButton.disabled = false;
+    } else if (cScore === 5) {
+        document.getElementById('reveal').style.display='flex';
+        gameOver.textContent = "Game over, the computer won!!! "
         restartGameButton.disabled = false;
     } else {
         return;
