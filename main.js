@@ -3,6 +3,10 @@ let result = document.querySelector('#result')
 const gameOverAppear = document.querySelector('.gameOverAppear')
 const restartGameButton = document.querySelector('#restart')
 const gameOver = document.querySelector('#gameOver')
+const rockButton = document.querySelector('#Rock')
+const paperButton = document.querySelector('#Paper')
+const scissorsButton = document.querySelector('#Scissors')
+
 
 let uScore = 0
 let cScore = 0
@@ -52,10 +56,16 @@ function checkGameScore(){
     if (uScore === 5) {
         document.getElementById('reveal').style.display='flex';
         gameOver.textContent = "Game over, you won!!! "
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
         restartGameButton.disabled = false;
     } else if (cScore === 5) {
         document.getElementById('reveal').style.display='flex';
-        gameOver.textContent = "Game over, the computer won!!! "
+        gameOver.textContent = "Game over, the computer won!!! ";
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
         restartGameButton.disabled = false;
     } else {
         return;
