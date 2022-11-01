@@ -1,5 +1,6 @@
 const selections = document.querySelectorAll('button')
 let result = document.querySelector('#result')
+const gameOverAppear = document.querySelector('.gameOverAppear')
 let uScore = 0
 let cScore = 0
 
@@ -33,20 +34,23 @@ function playRound(playerSelection){
                     result.textContent = `You Win! ${playerSelection} beats ${computerSelection}`
                     uScore++
                     updateScore();
+                    checkGameScore();
                     return;
     } else {   
         result.textContent = `You lose! ${playerSelection} loses to ${computerSelection}`
         cScore++
         updateScore();
+        checkGameScore();
         return;
     }
     console.log(computerSelection)
     console.log(playerSelection);
 }
 
-function checkGameScore() {
+function checkGameScore(){ 
     if (uScore === 5 || cScore === 5) {
-        
+        document.getElementById('reveal').style.display='flex';
+    } else {
+        return;
     }
 }
-
