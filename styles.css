@@ -22,6 +22,7 @@ body {
     cursor: pointer;
     font-size: 2rem;
     transition: 100ms;
+    border-radius: 5px;
 }
 
 .selection:hover {
@@ -42,7 +43,6 @@ body {
     margin-left: .1rem;
     font-size: 25px;
     color: #333;
-    min-height: 100vh;
 }
 
 .container {
@@ -56,15 +56,20 @@ body {
 #result {
     display: flex;
     font-size: 25px;
-    border-bottom: solid;
+    border: solid;
     border-color: black;
     padding-right: auto;
     justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: black;
+    color: white;
 }
 
 .gameLog {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .gameOverAppear {
@@ -75,10 +80,23 @@ body {
     align-items: center;
 }
 
+#restart {
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: black;
+    color: white;
+}
+
+#gameOver{
+    font-size: 50px;
+}
+
 .copyRight {
     display: flex;
     justify-content: center;
     background-color: darkgray;
     padding: 15px;
+    margin-top: auto;
 }
 

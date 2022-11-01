@@ -1,6 +1,9 @@
-const selections = document.querySelectorAll('button')
+const selections = document.querySelectorAll('.selections')
 let result = document.querySelector('#result')
 const gameOverAppear = document.querySelector('.gameOverAppear')
+const restartGameButton = document.querySelector('#restart')
+
+
 let uScore = 0
 let cScore = 0
 
@@ -43,14 +46,22 @@ function playRound(playerSelection){
         checkGameScore();
         return;
     }
-    console.log(computerSelection)
-    console.log(playerSelection);
 }
 
 function checkGameScore(){ 
     if (uScore === 5 || cScore === 5) {
         document.getElementById('reveal').style.display='flex';
+        restartGameButton.disabled = false;
     } else {
         return;
     }
 }
+
+function addSelectionResult() {
+    
+}
+
+//reload page with button
+restartGameButton.addEventListener('click', () => {
+        location.reload();
+    })
