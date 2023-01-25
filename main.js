@@ -56,20 +56,21 @@ function checkGameScore(){
     if (uScore === 5) {
         document.getElementById('reveal').style.display='flex';
         gameOver.textContent = "Game over, you won!!! "
-        rockButton.disabled = true;
-        paperButton.disabled = true;
-        scissorsButton.disabled = true;
-        restartGameButton.disabled = false;
+        disableButtons();
     } else if (cScore === 5) {
         document.getElementById('reveal').style.display='flex';
         gameOver.textContent = "Game over, the computer won!!! ";
-        rockButton.disabled = true;
-        paperButton.disabled = true;
-        scissorsButton.disabled = true;
-        restartGameButton.disabled = false;
+        disableButtons();
     } else {
         return;
     }
+}
+
+function disableButtons() {
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+    restartGameButton.disabled = false;
 }
 
 function addSelectionResult() {
